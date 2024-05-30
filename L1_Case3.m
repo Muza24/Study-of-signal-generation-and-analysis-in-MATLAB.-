@@ -1,0 +1,17 @@
+Vm = 10;
+f = 50;
+T = 1/f;
+w = 2*pi*f;
+Ns = 64;
+k = 1:8*Ns;
+t = k*(0.020/Ns);
+V1 = Vm * sin(w*t);
+V3 = 0.3 * Vm * sin(3*w*t);
+V5 = 0.2 * Vm * sin(5*w*t);
+V7 = 0.1 * Vm * sin(7*w*t);
+V = V1+V3+V5+V7;
+plot(V, 'Linewidth', 2);
+grid on;
+xlabel('Number of samples');
+ylabel('Voltage in Volts');
+title('Voltage waveform with different harmonics');
